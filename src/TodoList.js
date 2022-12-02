@@ -8,7 +8,7 @@ const TodoList = () => {
     const INITIAL_STATE = [
         { id: uuidv4(), task: '' }
     ]
-    const [todo, setTodo] = useState(INITIAL_STATE);
+    const [todos, setTodo] = useState(INITIAL_STATE);
 
     const addTodo = (newTodo) => {
         setTodo(todo => [...todo, { newTodo, id: uuidv4() }])
@@ -19,7 +19,7 @@ const TodoList = () => {
             <h3>Todo List</h3>
             <NewTodoForm addTodo={addTodo} />
             <div>
-                {todo.map(({ id, task }) => <Todo task={task} />)}
+                {todos.map(({ id, task }) => <Todo task={task} />)}
             </div>
         </div>
     )
